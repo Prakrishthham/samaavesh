@@ -16,7 +16,8 @@
   "homepage": "https://github.com/Prakrishthham/samaavesh#readme",
   "scripts": {
     "start:dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx jasmine HTTP_PORT=3101 HTTPS_PORT=3103",
+    "test:coverage": "npx nyc --reporter=html --reporter=text-summary jasmine HTTP_PORT=3101 HTTPS_PORT=3103"
   },
   "keywords": [],
   "dependencies": {
@@ -30,7 +31,10 @@
     "pino-pretty": "^11.3.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.7"
+    "jasmine": "^5.5.0",
+    "nodemon": "^3.1.7",
+    "nyc": "^17.1.0",
+    "supertest": "^7.0.0"
   },
   "type": "module"
 }

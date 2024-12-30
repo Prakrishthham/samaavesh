@@ -21,7 +21,10 @@ app.use(express.raw());
 app.use(cors(corsOptions));
 
 app.use("/api/v1", v1);
+app.use('/media', express.static('media'));
 
 app.listen(port, () => {
   logs.info(`Server running on port ${port}`);
 });
+
+export default app;
