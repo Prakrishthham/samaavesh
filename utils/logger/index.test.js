@@ -1,10 +1,9 @@
-import { logs } from './index.js';
-import logger from './logger/index.js';
+import logger from './index.js';
 
-describe('Utils Logs', () => {
+describe('Logger', () => {
   it('should log info messages', () => {
     const infoSpy = jest.spyOn(logger, 'info').mockImplementation(() => {});
-    logs.info('Test message');
+    logger.info('Test message');
     expect(infoSpy).toHaveBeenCalledWith('Test message');
     infoSpy.mockRestore();
   });
